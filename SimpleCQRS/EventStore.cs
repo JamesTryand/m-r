@@ -16,7 +16,7 @@ namespace SimpleCQRS
 
         private struct EventDescriptor
         {
-            
+
             public readonly Event EventData;
             public readonly Guid Id;
             public readonly int Version;
@@ -34,8 +34,8 @@ namespace SimpleCQRS
             _publisher = publisher;
         }
 
-        private readonly Dictionary<Guid, List<EventDescriptor>> _current = new Dictionary<Guid, List<EventDescriptor>>(); 
-        
+        private readonly Dictionary<Guid, List<EventDescriptor>> _current = new Dictionary<Guid, List<EventDescriptor>>();
+
         public void SaveEvents(Guid aggregateId, IEnumerable<Event> events, int expectedVersion)
         {
             List<EventDescriptor> eventDescriptors;

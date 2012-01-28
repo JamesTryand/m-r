@@ -5,7 +5,7 @@ namespace SimpleCQRS
 	{
         public int Version;
 	}
-	
+
 	public class InventoryItemDeactivated : Event {
 		public readonly Guid Id;
 
@@ -28,7 +28,7 @@ namespace SimpleCQRS
     {
 		public readonly Guid Id;
 		public readonly string NewName;
- 
+
         public InventoryItemRenamed(Guid id, string newName)
         {
             Id = id;
@@ -40,7 +40,7 @@ namespace SimpleCQRS
     {
 		public Guid Id;
 		public readonly int Count;
- 
+
         public ItemsCheckedInToInventory(Guid id, int count) {
 			Id = id;
 			Count = count;
@@ -51,7 +51,7 @@ namespace SimpleCQRS
     {
 		public Guid Id;
 		public readonly int Count;
- 
+
         public ItemsRemovedFromInventory(Guid id, int count) {
 			Id = id;
 			Count = count;
