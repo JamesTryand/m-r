@@ -21,7 +21,7 @@ namespace SimpleCQRS
 
         public void Send<T>(T command) where T : Command
         {
-            List<Action<Message>> handlers; 
+            List<Action<Message>> handlers;
             if (_routes.TryGetValue(typeof(T), out handlers))
             {
                 if (handlers.Count != 1) throw new InvalidOperationException("cannot send to more than one handler");
@@ -35,7 +35,7 @@ namespace SimpleCQRS
 
         public void Publish<T>(T @event) where T : Event
         {
-            List<Action<Message>> handlers; 
+            List<Action<Message>> handlers;
             if (!_routes.TryGetValue(@event.GetType(), out handlers)) return;
             foreach(var handler in handlers)
             {

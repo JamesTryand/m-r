@@ -4,7 +4,7 @@ namespace SimpleCQRS
 	public class Command : Message
 	{
 	}
-	
+
 	public class DeactivateInventoryItem : Command {
 		public readonly Guid InventoryItemId;
 	    public readonly int OriginalVersion;
@@ -15,18 +15,18 @@ namespace SimpleCQRS
 	        OriginalVersion = originalVersion;
 	    }
 	}
-	
+
 	public class CreateInventoryItem : Command {
 		public readonly Guid InventoryItemId;
 		public readonly string Name;
-	    
+
 	    public CreateInventoryItem(Guid inventoryItemId, string name)
         {
 			InventoryItemId = inventoryItemId;
 			Name = name;
         }
 	}
-	
+
 	public class RenameInventoryItem : Command {
 		public readonly Guid InventoryItemId;
 		public readonly string NewName;
@@ -51,7 +51,7 @@ namespace SimpleCQRS
 		    OriginalVersion = originalVersion;
 		}
 	}
-	
+
 	public class RemoveItemsFromInventory : Command {
 		public Guid InventoryItemId;
 		public readonly int Count;
